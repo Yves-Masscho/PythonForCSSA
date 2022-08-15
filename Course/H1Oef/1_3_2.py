@@ -1,11 +1,11 @@
 from math import floor
 
-
-def ZoekBinair(zoekItem, rij):
+def zoekBinair(rij,zoekItem):
     l = 0
     n = len(rij)
     r = n - 1
     while l != r:
+        print(l,", ",r,sep="")
         m = floor ((l+r)/2)
         if rij[m] < zoekItem:
             l = m + 1
@@ -16,10 +16,3 @@ def ZoekBinair(zoekItem, rij):
     else:
         index = -1
     return index
-
-#voorbeeld
-rij = [1,2,3,4,5,6]
-print(ZoekBinair(5,rij)) # 4
-#voorbeeld
-rij = [1,2,3,4,6,6]
-print(ZoekBinair(5,rij)) # -1
